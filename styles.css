@@ -102,6 +102,7 @@ a {
 .nav.scrolled {
     border-bottom-color: var(--border);
     padding: 14px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 .nav-container {
@@ -119,10 +120,21 @@ a {
     font-weight: 600;
     color: var(--text-primary);
     letter-spacing: -0.02em;
+    transition: transform 0.2s var(--ease);
+}
+
+.nav-logo:hover {
+    transform: translateY(-1px);
 }
 
 .logo-bracket {
     color: var(--accent);
+    transition: transform 0.2s var(--ease), text-shadow 0.2s var(--ease);
+}
+
+.nav-logo:hover .logo-bracket {
+    transform: scale(1.05);
+    text-shadow: 0 0 8px var(--accent-glow);
 }
 
 .nav-links {
@@ -142,6 +154,21 @@ a {
     color: var(--text-primary);
 }
 
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--accent);
+    transition: width 0.25s var(--ease);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
 .nav-cta {
     font-size: 0.85rem;
     font-weight: 500;
@@ -155,6 +182,8 @@ a {
 .nav-cta:hover {
     background: var(--accent-glow);
     color: var(--accent);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px var(--accent-glow);
 }
 
 .nav-mobile-toggle {
@@ -228,6 +257,7 @@ a {
     border-radius: 50%;
     background: var(--accent);
     animation: pulse 2s infinite;
+    box-shadow: 0 0 0 3px var(--accent-glow);
 }
 
 @keyframes pulse {
@@ -346,7 +376,37 @@ a {
     margin-top: 4px;
 }
 
+/* Premium hero entrance + micro-interactions */
+.hero-content > * {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: heroEntrance 0.7s var(--ease) forwards;
+}
+
+.hero-status { animation-delay: 0.1s; }
+.hero-title { animation-delay: 0.25s; }
+.hero-subtitle { animation-delay: 0.45s; }
+.hero-cta { animation-delay: 0.6s; }
+.hero-metrics { animation-delay: 0.75s; }
+
+@keyframes heroEntrance {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.metric {
+    transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+
+.metric:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
 /* Scroll hint */
+
 .scroll-hint {
     position: absolute;
     bottom: 40px;
