@@ -6,12 +6,12 @@
 :root {
     /* Colors — dark with signal accents */
     --bg-primary: #0a0a0a;
-    --bg-secondary: #111111;
+    --bg-secondary: #161616;
     --bg-tertiary: #1a1a1a;
     --bg-card: #141414;
     --text-primary: #e8e8e8;
     --text-secondary: #888888;
-    --text-muted: #a0a0a0;
+    --text-muted: #b0b0b0;
     --accent: #00ff88;
     --accent-dim: #00cc6a;
     --accent-glow: rgba(0, 255, 136, 0.15);
@@ -327,7 +327,8 @@ a {
 }
 
 .title-line.dim {
-    color: var(--text-muted);
+    color: #c8c8c8;
+    font-weight: 500;
 }
 
 .hero-subtitle {
