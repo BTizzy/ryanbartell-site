@@ -14,14 +14,72 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
-// Mobile nav toggle
+// Mobile nav toggle — slide-in panel with overlay, ESC, focus mgmt
 const navMobileToggle = document.getElementById('navMobileToggle');
 const navLinks = document.querySelector('.nav-links');
 
-if (navMobileToggle) {
-    navMobileToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        navMobileToggle.classList.toggle('active');
+if (navMobileToggle && navLinks) {
+    // Ensure controlled element has an ID for aria-controls
+    if (!navLinks.id) {
+        navLinks.id = 'navLinks';
+    }
+    navMobileToggle.setAttribute('aria-controls', navLinks.id);
+    navMobileToggle.setAttribute('aria-expanded', 'false');
+
+    // Create overlay element dynamically (keeps index.html untouched)
+    const overlay = document.createElement('div');
+    overlay.className = 'mobile-menu-overlay';
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(overlay);
+
+    const isOpen = () => navLinks.classList.contains('active');
+
+    function openMenu() {
+        navLinks.classList.add('active');
+        navMobileToggle.classList.add('active');
+        overlay.classList.add('active');
+        document.body.classList.add('menu-open');
+        navMobileToggle.setAttribute('aria-expanded', 'true');
+        overlay.setAttribute('aria-hidden', 'false');
+        // Focus first link for keyboard/screen-reader users
+        const firstLink = navLinks.querySelector('a');
+        if (firstLink) firstLink.focus({ preventScroll: true });
+    }
+
+    function closeMenu() {
+        if (!isOpen()) return;
+        navLinks.classList.remove('active');
+        navMobileToggle.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.classList.remove('menu-open');
+        navMobileToggle.setAttribute('aria-expanded', 'false');
+        overlay.setAttribute('aria-hidden', 'true');
+        // Return focus to the toggle so keyboard users land somewhere sensible
+        navMobileToggle.focus({ preventScroll: true });
+    }
+
+    function toggleMenu() {
+        isOpen() ? closeMenu() : openMenu();
+    }
+
+    navMobileToggle.addEventListener('click', toggleMenu);
+
+    // Click overlay → close
+    overlay.addEventListener('click', closeMenu);
+
+    // Click any nav link inside the panel → close (event delegation)
+    navLinks.addEventListener('click', (e) => {
+        if (e.target.closest('a')) closeMenu();
+    });
+
+    // ESC → close
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && isOpen()) closeMenu();
+    });
+
+    // If user resizes to desktop while menu is open, close it to avoid stale state
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 968 && isOpen()) closeMenu();
     });
 }
 
