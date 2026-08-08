@@ -3,7 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ryan Bartell — Partner and operator at Trillium Hiring and Trilly Corp, alongside Amy Renhard (founder) and Rachel Ramos (brand). AI-powered talent partner and builder for small businesses and startups.">
+    <meta name="description" content="Ryan Bartell — partner and operator at Trillium Hiring and Trilly Corp. AI-powered talent partner for Seattle small businesses.">
+    <meta name="author" content="Ryan Bartell">
+    <meta name="theme-color" content="#0a0a0a">
+    <link rel="canonical" href="https://btizzy.github.io/ryanbartell-site/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://btizzy.github.io/ryanbartell-site/">
+    <meta property="og:title" content="Ryan Bartell — Operator & Builder">
+    <meta property="og:description" content="Partner and operator at Trillium Hiring and Trilly Corp. AI-powered talent partner for Seattle small businesses.">
+    <meta property="og:site_name" content="Ryan Bartell">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ryan Bartell — Operator & Builder">
+    <meta name="twitter:description" content="Partner and operator at Trillium Hiring and Trilly Corp. AI-powered talent partner for Seattle small businesses.">
     <title>Ryan Bartell — Operator & Builder</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,28 +23,34 @@
 </head>
 <body>
     <!-- Noise texture overlay -->
-    <div class="noise-overlay"></div>
+    <div class="noise-overlay" aria-hidden="true"></div>
+
+    <!-- Skip link for keyboard users -->
+    <a href="#main" class="skip-link">Skip to main content</a>
 
     <!-- Navigation -->
-    <nav class="nav" id="mainNav">
+    <nav class="nav" id="mainNav" aria-label="Primary">
         <div class="nav-container">
             <a href="#" class="nav-logo">
                 <span class="logo-bracket">&lt;</span>rb<span class="logo-bracket">/&gt;</span>
             </a>
-            <div class="nav-links">
+            <div class="nav-links" id="navLinks">
                 <a href="#work" class="nav-link">Services</a>
                 <a href="#build" class="nav-link">Projects</a>
                 <a href="#connect" class="nav-link">Contact</a>
                 <a href="mailto:ryanbartell@trilliumhiring.com" class="nav-cta">Get In Touch</a>
             </div>
-            <button class="nav-mobile-toggle" id="navMobileToggle" aria-label="Toggle menu">
+            <button class="nav-mobile-toggle" id="navMobileToggle" aria-label="Toggle menu" aria-controls="navLinks" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
         </div>
     </nav>
 
+    <main id="main">
+
     <!-- Hero -->
     <section class="hero">
+        <div class="vx-hero-bg" aria-hidden="true"></div>
         <div class="hero-grid-bg"></div>
         <div class="container">
             <div class="hero-content">
@@ -47,11 +64,11 @@
                     <span class="title-line dim">and the people that build.</span>
                 </h1>
                 <p class="hero-subtitle">
-                    Partner and operator at <a href="https://trilliumhiring.com" target="_blank" class="inline-link">Trillium Hiring</a> and <a href="https://trillycorp.com" target="_blank" class="inline-link">Trilly Corp</a>. I lead recruiting, HR systems, and AI automation for small businesses and startups that need to scale without the bloat.
+                    Partner and operator at <a href="https://trilliumhiring.com" target="_blank" rel="noopener noreferrer" class="inline-link">Trillium Hiring</a> and <a href="https://trillycorp.com" target="_blank" rel="noopener noreferrer" class="inline-link">Trilly Corp</a>. I lead recruiting, HR systems, and AI automation for small businesses and startups that need to scale without the bloat.
                 </p>
                 <div class="hero-cta">
                     <a href="#work" class="btn btn-primary">See My Work</a>
-                    <a href="https://linkedin.com/in/ryan-bartell" target="_blank" class="btn btn-ghost">LinkedIn →</a>
+                    <a href="https://linkedin.com/in/ryan-bartell" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">LinkedIn →</a>
                 </div>
                 <div class="hero-metrics">
                     <div class="metric">
@@ -142,16 +159,28 @@
             <div class="section-header">
                 <span class="section-tag">// What I Do</span>
                 <h2 class="section-title">Talent meets technology</h2>
-                <p class="section-subtitle">I sit at the intersection of recruiting, HR operations, and AI automation — building the systems that help small teams hire like big ones.</p>
+                <p class="section-subtitle">Three lanes. One operator. I run recruiting, set up HR systems, and build the AI agents that make both faster — for small teams that need to scale without adding headcount.</p>
             </div>
             <div class="work-grid">
-                <div class="work-card">
-                    <div class="work-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                            <circle cx="9" cy="7" r="4"/>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                <div class="work-card vx-tilt vx-reveal" data-tilt-max="3">
+                    <div class="work-icon vx-icon-talent">
+                        <svg width="44" height="44" viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="28" cy="28" r="22" opacity="0.28"/>
+                            <circle cx="28" cy="28" r="15" opacity="0.45"/>
+                            <circle cx="28" cy="28" r="8" opacity="0.65"/>
+                            <line x1="28" y1="6" x2="28" y2="18" opacity="0.55"/>
+                            <line x1="28" y1="38" x2="28" y2="50" opacity="0.55"/>
+                            <line x1="6" y1="28" x2="18" y2="28" opacity="0.55"/>
+                            <line x1="38" y1="28" x2="50" y2="28" opacity="0.55"/>
+                            <line x1="11" y1="11" x2="15" y2="15" opacity="0.4"/>
+                            <line x1="45" y1="11" x2="41" y2="15" opacity="0.4"/>
+                            <line x1="11" y1="45" x2="15" y2="41" opacity="0.4"/>
+                            <line x1="45" y1="45" x2="41" y2="41" opacity="0.4"/>
+                            <path d="M28 28 L 46 14" opacity="0.6"/>
+                            <circle cx="28" cy="28" r="2.5" fill="currentColor"/>
+                            <circle cx="42" cy="22" r="1.8" fill="currentColor" opacity="0.9"/>
+                            <circle cx="42" cy="22" r="3.5" opacity="0.4"/>
+                            <circle cx="14" cy="38" r="1.2" fill="currentColor" opacity="0.55"/>
                         </svg>
                     </div>
                     <h3>Talent Acquisition</h3>
@@ -162,12 +191,28 @@
                         <span>Pipeline Building</span>
                     </div>
                 </div>
-                <div class="work-card">
-                    <div class="work-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                            <line x1="8" y1="21" x2="16" y2="21"/>
-                            <line x1="12" y1="17" x2="12" y2="21"/>
+                <div class="work-card vx-tilt vx-reveal" data-tilt-max="3">
+                    <div class="work-icon vx-icon-systems">
+                        <svg width="44" height="44" viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <rect x="6" y="6" width="20" height="20" rx="3" opacity="0.55"/>
+                            <circle cx="16" cy="14" r="3"/>
+                            <path d="M10 22c0-3.3 2.7-6 6-6s6 2.7 6 6" opacity="0.7"/>
+                            <rect x="30" y="6" width="20" height="20" rx="3" opacity="0.55"/>
+                            <circle cx="40" cy="14" r="3"/>
+                            <path d="M34 22c0-3.3 2.7-6 6-6s6 2.7 6 6" opacity="0.7"/>
+                            <rect x="6" y="30" width="20" height="20" rx="3" opacity="0.55"/>
+                            <circle cx="16" cy="38" r="3"/>
+                            <path d="M10 46c0-3.3 2.7-6 6-6s6 2.7 6 6" opacity="0.7"/>
+                            <rect x="30" y="30" width="20" height="20" rx="3" opacity="1"/>
+                            <circle cx="40" cy="38" r="3" fill="currentColor" fill-opacity="0.18"/>
+                            <path d="M34 46c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
+                            <line x1="26" y1="16" x2="30" y2="16" opacity="0.45"/>
+                            <line x1="26" y1="40" x2="30" y2="40" opacity="0.45"/>
+                            <line x1="16" y1="26" x2="16" y2="30" opacity="0.45"/>
+                            <line x1="40" y1="26" x2="40" y2="30" opacity="0.45"/>
+                            <circle cx="28" cy="28" r="1.2" fill="currentColor" opacity="0.7"/>
+                            <circle cx="28" cy="28" r="2.6" opacity="0.35"/>
+                            <circle cx="48" cy="32" r="1.4" fill="currentColor"/>
                         </svg>
                     </div>
                     <h3>HR Systems</h3>
@@ -178,12 +223,32 @@
                         <span>Compliance</span>
                     </div>
                 </div>
-                <div class="work-card">
-                    <div class="work-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                            <path d="M2 17l10 5 10-5"/>
-                            <path d="M2 12l10 5 10-5"/>
+                <div class="work-card vx-tilt vx-reveal" data-tilt-max="3">
+                    <div class="work-icon vx-icon-ai">
+                        <svg width="44" height="44" viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <line x1="12" y1="14" x2="28" y2="20" opacity="0.4"/>
+                            <line x1="12" y1="14" x2="28" y2="36" opacity="0.4"/>
+                            <line x1="12" y1="28" x2="28" y2="20" opacity="0.4"/>
+                            <line x1="12" y1="28" x2="28" y2="36" opacity="0.4"/>
+                            <line x1="12" y1="42" x2="28" y2="20" opacity="0.4"/>
+                            <line x1="12" y1="42" x2="28" y2="36" opacity="0.4"/>
+                            <line x1="28" y1="20" x2="44" y2="28" opacity="0.55"/>
+                            <line x1="28" y1="36" x2="44" y2="28" opacity="0.55"/>
+                            <circle cx="12" cy="14" r="2.8" opacity="0.65"/>
+                            <circle cx="12" cy="28" r="2.8" opacity="0.65"/>
+                            <circle cx="12" cy="42" r="2.8" opacity="0.65"/>
+                            <circle cx="28" cy="20" r="3.2" opacity="0.85"/>
+                            <circle cx="28" cy="36" r="3.2" opacity="0.85"/>
+                            <circle cx="44" cy="28" r="6" fill="currentColor" fill-opacity="0.12"/>
+                            <circle cx="44" cy="28" r="3.5" fill="currentColor"/>
+                            <line x1="44" y1="6" x2="44" y2="9" opacity="0.7"/>
+                            <line x1="44" y1="47" x2="44" y2="50" opacity="0.7"/>
+                            <line x1="44" y1="28" x2="50" y2="28" opacity="0.5"/>
+                            <line x1="52" y1="20" x2="55" y2="18" opacity="0.4"/>
+                            <line x1="52" y1="36" x2="55" y2="38" opacity="0.4"/>
+                            <circle cx="50" cy="14" r="0.7" fill="currentColor" opacity="0.7"/>
+                            <circle cx="38" cy="6" r="0.7" fill="currentColor" opacity="0.5"/>
+                            <circle cx="38" cy="50" r="0.7" fill="currentColor" opacity="0.5"/>
                         </svg>
                     </div>
                     <h3>AI & Automation</h3>
@@ -202,7 +267,7 @@
     <section class="section companies">
         <div class="container">
             <div class="companies-row">
-                <a href="https://trilliumhiring.com" target="_blank" class="company-card">
+                <a href="https://trilliumhiring.com" target="_blank" rel="noopener noreferrer" class="company-card">
                     <div class="company-logo">TH</div>
                     <div class="company-info">
                         <h3>Trillium Hiring</h3>
@@ -210,7 +275,7 @@
                     </div>
                     <span class="company-arrow">→</span>
                 </a>
-                <a href="https://trillycorp.com" target="_blank" class="company-card">
+                <a href="https://trillycorp.com" target="_blank" rel="noopener noreferrer" class="company-card">
                     <div class="company-logo">TC</div>
                     <div class="company-info">
                         <h3>Trilly Corp</h3>
@@ -234,7 +299,7 @@
                 <p class="section-subtitle">Side projects, tools, and experiments. I build to learn and ship to ship.</p>
             </div>
             <div class="build-grid">
-                <a href="https://github.com/BTizzy/ski-conditions-aggregator" target="_blank" class="build-card">
+                <a href="https://github.com/BTizzy/ski-conditions-aggregator" target="_blank" rel="noopener noreferrer" class="build-card">
                     <div class="build-header">
                         <span class="build-type">Tool</span>
                         <span class="build-year">2026</span>
@@ -242,7 +307,7 @@
                     <h3>Ski Conditions Aggregator</h3>
                     <p>Real-time ski condition monitoring and aggregation. Because powder days shouldn't be missed.</p>
                 </a>
-                <a href="https://github.com/BTizzy/gopro-highlight-editor" target="_blank" class="build-card">
+                <a href="https://github.com/BTizzy/gopro-highlight-editor" target="_blank" rel="noopener noreferrer" class="build-card">
                     <div class="build-header">
                         <span class="build-type">Tool</span>
                         <span class="build-year">2025</span>
@@ -250,7 +315,7 @@
                     <h3>GoPro Highlight Editor</h3>
                     <p>GPS-based automatic highlight reel creation from GoPro footage using speed telemetry data.</p>
                 </a>
-                <a href="https://github.com/BTizzy/polymarket-ai-trader" target="_blank" class="build-card">
+                <a href="https://github.com/BTizzy/polymarket-ai-trader" target="_blank" rel="noopener noreferrer" class="build-card">
                     <div class="build-header">
                         <span class="build-type">AI</span>
                         <span class="build-year">2025</span>
@@ -258,7 +323,7 @@
                     <h3>Polymarket AI Trader</h3>
                     <p>Real-time prediction market trading with AI-powered market selection and volatility analysis.</p>
                 </a>
-                <a href="https://github.com/BTizzy/trillium-workflow" target="_blank" class="build-card">
+                <a href="https://github.com/BTizzy/trillium-workflow" target="_blank" rel="noopener noreferrer" class="build-card">
                     <div class="build-header">
                         <span class="build-type">System</span>
                         <span class="build-year">2026</span>
@@ -266,7 +331,7 @@
                     <h3>Trillium Workflow</h3>
                     <p>Email workflow system and visualization for Trillium Hiring's outreach and nurture sequences.</p>
                 </a>
-                <a href="https://github.com/BTizzy/kraken-ai-trader" target="_blank" class="build-card">
+                <a href="https://github.com/BTizzy/kraken-ai-trader" target="_blank" rel="noopener noreferrer" class="build-card">
                     <div class="build-header">
                         <span class="build-type">AI</span>
                         <span class="build-year">2025</span>
@@ -274,7 +339,7 @@
                     <h3>Kraken AI Trader</h3>
                     <p>High-frequency volatility scraper and mean reversion bot for Kraken crypto exchange. Real-time signals, automated execution.</p>
                 </a>
-                <a href="https://github.com/BTizzy" target="_blank" class="build-card build-card-more">
+                <a href="https://github.com/BTizzy" target="_blank" rel="noopener noreferrer" class="build-card build-card-more">
                     <div class="build-more-content">
                         <span class="build-more-icon">⚡</span>
                         <span class="build-more-text">See all on GitHub</span>
@@ -295,9 +360,9 @@
                 </div>
                 <div class="bounty-content">
                     <h3>Also: Bug Bounty Hunter</h3>
-                    <p>I hunt vulnerabilities in open-source AI/ML infrastructure. Critical submissions on BentoML and Ollama. Because if you're going to break things, get paid for it.</p>
+                    <p>I find vulns in open-source AI/ML infrastructure. Verified critical findings on BentoML and Ollama (CVE-class issues, paid bounties via Huntr). If you're going to break things, get paid for it.</p>
                 </div>
-                <a href="https://github.com/BTizzy" target="_blank" class="btn btn-small btn-ghost">Proof →</a>
+                <a href="https://github.com/BTizzy" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-ghost">Proof →</a>
             </div>
         </div>
     </section>
@@ -313,11 +378,11 @@
                         <span class="connect-link-icon">✉</span>
                         ryanbartell@trilliumhiring.com
                     </a>
-                    <a href="https://linkedin.com/in/ryan-bartell" target="_blank" class="connect-link">
+                    <a href="https://linkedin.com/in/ryan-bartell" target="_blank" rel="noopener noreferrer" class="connect-link">
                         <span class="connect-link-icon">in</span>
                         LinkedIn
                     </a>
-                    <a href="https://github.com/BTizzy" target="_blank" class="connect-link">
+                    <a href="https://github.com/BTizzy" target="_blank" rel="noopener noreferrer" class="connect-link">
                         <span class="connect-link-icon">&lt;/&gt;</span>
                         GitHub
                     </a>
@@ -325,6 +390,8 @@
             </div>
         </div>
     </section>
+
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
