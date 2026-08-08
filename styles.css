@@ -208,12 +208,12 @@ a {
    ========================================== */
 
 .hero {
-    min-height: 100vh;
+    min-height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative;
-    padding: 160px 0 80px;
+    padding: 120px 0 100px;
     overflow: hidden;
 }
 
@@ -240,15 +240,15 @@ a {
 .hero-status {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     font-family: var(--font-mono);
-    font-size: 0.8rem;
-    color: var(--accent);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
     margin-bottom: 32px;
-    padding: 6px 14px;
-    border: 1px solid rgba(0, 255, 136, 0.2);
+    padding: 8px 18px;
+    border: 1px solid var(--border-light);
     border-radius: 20px;
-    background: var(--accent-glow);
+    background: rgba(255, 255, 255, 0.02);
 }
 
 .status-dot {
@@ -286,11 +286,12 @@ a {
 }
 
 .hero-subtitle {
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     color: var(--text-secondary);
-    max-width: 560px;
+    max-width: 620px;
     margin-bottom: 40px;
-    line-height: 1.7;
+    line-height: 1.6;
+    font-weight: 400;
 }
 
 .inline-link {
@@ -353,8 +354,8 @@ a {
 /* Hero metrics */
 .hero-metrics {
     display: flex;
-    gap: 48px;
-    padding-top: 40px;
+    gap: 56px;
+    padding-top: 36px;
     border-top: 1px solid var(--border);
 }
 
@@ -367,7 +368,7 @@ a {
     font-family: var(--font-mono);
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--accent);
+    color: var(--text-primary);
 }
 
 .metric-label {
@@ -604,14 +605,58 @@ a {
 }
 
 .company-arrow {
-    font-size: 1.2rem;
-    color: var(--text-muted);
+    font-size: 1.3rem;
+    color: var(--text-secondary);
     transition: var(--transition);
+    flex-shrink: 0;
 }
 
 .company-card:hover .company-arrow {
     color: var(--gold);
     transform: translateX(4px);
+}
+
+.company-credit {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+}
+
+.credit-label {
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.credit-name {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.credit-sep {
+    color: var(--text-muted);
+    opacity: 0.5;
+}
+
+.companies-credit {
+    margin-top: 32px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    text-align: center;
+    letter-spacing: 0.01em;
+}
+
+.companies-credit strong {
+    color: var(--text-secondary);
+    font-weight: 500;
 }
 
 /* ==========================================
@@ -895,16 +940,31 @@ a {
     }
 
     .hero {
-        padding: 120px 0 60px;
+        padding: 80px 0 50px;
+    }
+
+    .hero-subtitle {
+        font-size: 1.05rem;
+        line-height: 1.55;
     }
 
     .hero-cta {
         flex-direction: column;
+        margin-bottom: 40px;
     }
 
     .hero-metrics {
-        flex-direction: column;
-        gap: 20px;
+        flex-direction: row;
+        gap: 16px;
+        padding-top: 28px;
+    }
+
+    .metric-value {
+        font-size: 1.2rem;
+    }
+
+    .metric-label {
+        font-size: 0.72rem;
     }
 
     .build-grid {
@@ -913,5 +973,9 @@ a {
 
     .company-card {
         padding: 24px;
+    }
+
+    .companies-credit {
+        font-size: 0.82rem;
     }
 }
