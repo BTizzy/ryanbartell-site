@@ -1,54 +1,45 @@
 # Ryan Bartell — Personal Site
 
-Partner and operator at Trillium Hiring and Trilly Corp. Live at https://btizzy.github.io/ryanbartell-site/.
+Partner and operator at Trillium Hiring and Trilly Corp (Amy owns both; Rachel leads brand). Live at https://btizzy.github.io/ryanbartell-site/.
 
-## What's here
+Single-page portfolio. Dark operator aesthetic. Vanilla HTML/CSS/JS. No framework, no build step, no analytics, no tracking.
 
-The site is a single-page portfolio with a dark operator aesthetic. It is built with hand-rolled HTML, CSS, and JS. Sections: hero, about, services, companies, case studies, build log, bug bounty, contact. No build step, no framework, no analytics, no tracking.
-
-## Local development
+## Local Development
 
 ```bash
-# Clone
 git clone https://github.com/BTizzy/ryanbartell-site.git
 cd ryanbartell-site
-
-# Serve locally (any static server works)
 python3 -m http.server 8765
-# then open http://localhost:8765/
 ```
+
+Open http://localhost:8765.
 
 ## Deploy
 
-Push to main → GitHub Pages auto-deploys within ~30s. Check status at `gh api repos/BTizzy/ryanbartell-site/pages`.
+Push to `main` → GitHub Pages deploys automatically (~30s). Check status with:
 
-## File structure
-
-```
-ryanbartell-site/
-├── index.html        # single page, all sections
-├── styles.css        # dark operator aesthetic
-├── script.js         # mobile menu, smooth scroll, intersection observer
-├── assets/           # hero bg, icons
-└── README.md         # you are here
+```bash
+gh api repos/BTizzy/ryanbartell-site/pages
 ```
 
-## Custom domain (when ready)
+Custom domain (when ready): add `CNAME` file with the domain, update DNS (A records for apex, CNAME for www), enable HTTPS in repo settings.
 
-Add a `CNAME` file at repo root with the domain (e.g. `ryanbartell.com`). Configure DNS:
-- Apex domain (`ryanbartell.com`): A records to GitHub Pages IPs (185.199.108.153, .109.153, .110.153, .111.153)
-- Subdomain (`www.ryanbartell.com`): CNAME to `btizzy.github.io`
+## Structure
 
-Then enable HTTPS enforcement in repo Settings → Pages.
+- `index.html` — all sections (hero, about, services, companies, build log, bug bounty, connect)
+- `styles.css` — dark technical aesthetic with micro-interactions
+- `script.js` — mobile menu (slide-in, ESC, focus trap, ARIA), smooth scroll, intersection observer reveals
+- `assets/` — hero background, custom SVGs, icons
 
-## Editing conventions
+## Editing Rules
 
-- One PR per concern (content, copy, design, deploy)
-- Keep it vanilla — no React, no build step, no Tailwind
-- Match the existing dark operator aesthetic — no playful colors, no rounded blobs
-- Voice is direct, anti-bloat. No "passionate about", no "in today's fast-paced world"
-- Max 1 em-dash per paragraph
+- One concern per PR
+- Match existing voice: direct, specific numbers, anti-bloat, max 1 em-dash per paragraph
+- Keep it vanilla
+- Source all claims (especially bug bounty work)
 
 ## License
 
-Personal site — no license. Don't reproduce without permission.
+Personal site. Don't copy without permission.
+
+Last updated: 2026-08-08
