@@ -43,3 +43,5 @@ Custom domain (when ready): add `CNAME` file with the domain, update DNS (A reco
 Personal site. Don't copy without permission.
 
 Last updated: 2026-08-08
+
+Last deployed: Sat Aug  8 12:52:36 EDT 2026
