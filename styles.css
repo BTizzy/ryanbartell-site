@@ -979,3 +979,210 @@ a {
         font-size: 0.82rem;
     }
 }
+
+/* ==========================================
+   VX VISUAL LAYER — micro-interactions + assets
+   (appended 2026-08-08 by feature/visual-assets agent)
+   Prefix: vx- (visual experience)
+   ========================================== */
+
+/* --- 1. Hero atmospheric background (sits behind .hero-grid-bg) --- */
+.vx-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: url('assets/hero-bg.svg');
+    background-image: url('assets/hero-bg.webp'), url('assets/hero-bg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    /* Heavy mask so text stays the hero, bg is just atmosphere */
+    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 38% 42%, black 20%, transparent 75%);
+    mask-image: radial-gradient(ellipse 80% 70% at 38% 42%, black 20%, transparent 75%);
+    opacity: 1;
+    pointer-events: none;
+}
+
+/* Subtle slow drift on the bg to feel alive without distracting */
+@keyframes vxHeroDrift {
+    0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+    50% { transform: translate3d(-12px, -6px, 0) scale(1.02); }
+}
+
+.vx-hero-bg {
+    animation: vxHeroDrift 28s ease-in-out infinite;
+    will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .vx-hero-bg { animation: none; }
+}
+
+/* Make sure hero content sits above the visual layers */
+.hero-content { z-index: 2; }
+
+/* --- 2. Custom icon containers (kept 56x56 to match .work-icon) --- */
+.work-icon svg { display: block; }
+
+/* Subtle inner shimmer on icon containers — accent dot pulses in corner */
+.vx-icon-talent,
+.vx-icon-systems,
+.vx-icon-ai {
+    position: relative;
+    overflow: hidden;
+}
+
+.vx-icon-talent::after,
+.vx-icon-systems::after,
+.vx-icon-ai::after {
+    content: '';
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 6px var(--accent);
+    opacity: 0.85;
+}
+
+.vx-icon-talent::before,
+.vx-icon-systems::before,
+.vx-icon-ai::before {
+    content: '';
+    position: absolute;
+    inset: -50%;
+    background: linear-gradient(115deg, transparent 40%, rgba(0, 255, 136, 0.08) 50%, transparent 60%);
+    transform: translateX(-100%);
+    transition: transform 0.8s var(--ease);
+    pointer-events: none;
+}
+
+.work-card:hover .vx-icon-talent::before,
+.work-card:hover .vx-icon-systems::before,
+.work-card:hover .vx-icon-ai::before {
+    transform: translateX(100%);
+}
+
+/* --- 3. Work card 3D tilt --- */
+.vx-tilt {
+    transform-style: preserve-3d;
+    will-change: transform;
+    transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);
+}
+
+.vx-tilt:hover {
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.55),
+        0 12px 30px rgba(0, 255, 136, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* The card content subtly shifts to enhance depth */
+.vx-tilt .work-icon,
+.vx-tilt h3,
+.vx-tilt p,
+.vx-tilt .work-tags {
+    transform: translateZ(20px);
+}
+
+/* Disable tilt on touch devices (mousemove doesn't apply) */
+@media (hover: none) {
+    .vx-tilt { transform: none !important; }
+}
+
+/* --- 4. Button ripple (CSS-only animation, JS adds .vx-ripple span) --- */
+.btn {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.vx-ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.18);
+    transform: scale(0);
+    pointer-events: none;
+    z-index: 1;
+    animation: vxRipple 0.65s var(--ease) forwards;
+}
+
+.btn-primary .vx-ripple {
+    background: rgba(10, 10, 10, 0.28);
+}
+
+@keyframes vxRipple {
+    to {
+        transform: scale(4.5);
+        opacity: 0;
+    }
+}
+
+/* --- 5. Slicker nav underline (center-out via scaleX) --- */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.35s var(--ease);
+    box-shadow: 0 0 6px var(--accent-glow);
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+/* --- 6. Section reveal (IntersectionObserver-driven) --- */
+.vx-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+
+.vx-reveal.vx-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger delay when many .vx-reveal sit in a grid */
+.work-grid .vx-reveal:nth-child(1) { transition-delay: 0s; }
+.work-grid .vx-reveal:nth-child(2) { transition-delay: 0.08s; }
+.work-grid .vx-reveal:nth-child(3) { transition-delay: 0.16s; }
+
+@media (prefers-reduced-motion: reduce) {
+    .vx-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* --- 7. Counter (no visual class needed, JS only — but provide a small polish) --- */
+.metric-value {
+    font-variant-numeric: tabular-nums;
+    transition: color 0.3s var(--ease);
+}
+
+.metric-value.vx-counter-done {
+    color: var(--accent);
+}
+
+/* --- 8. Mobile: tighten things up so visual layer doesn't feel busy --- */
+@media (max-width: 640px) {
+    .vx-hero-bg {
+        -webkit-mask-image: radial-gradient(ellipse 100% 80% at 50% 35%, black 25%, transparent 80%);
+        mask-image: radial-gradient(ellipse 100% 80% at 50% 35%, black 25%, transparent 80%);
+    }
+
+    .vx-tilt:hover {
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    }
+}

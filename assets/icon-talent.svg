@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="28" cy="28" r="22" opacity="0.28"/>
+  <circle cx="28" cy="28" r="15" opacity="0.45"/>
+  <circle cx="28" cy="28" r="8" opacity="0.65"/>
+  <line x1="28" y1="6" x2="28" y2="18" opacity="0.55"/>
+  <line x1="28" y1="38" x2="28" y2="50" opacity="0.55"/>
+  <line x1="6" y1="28" x2="18" y2="28" opacity="0.55"/>
+  <line x1="38" y1="28" x2="50" y2="28" opacity="0.55"/>
+  <line x1="11" y1="11" x2="15" y2="15" opacity="0.4"/>
+  <line x1="45" y1="11" x2="41" y2="15" opacity="0.4"/>
+  <line x1="11" y1="45" x2="15" y2="41" opacity="0.4"/>
+  <line x1="45" y1="45" x2="41" y2="41" opacity="0.4"/>
+  <path d="M28 28 L 46 14" opacity="0.6"/>
+  <circle cx="28" cy="28" r="2.5" fill="currentColor"/>
+  <circle cx="42" cy="22" r="1.8" fill="currentColor" opacity="0.9"/>
+  <circle cx="42" cy="22" r="3.5" opacity="0.4"/>
+  <circle cx="14" cy="38" r="1.2" fill="currentColor" opacity="0.55"/>
+</svg>
