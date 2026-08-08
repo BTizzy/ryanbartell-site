@@ -20,6 +20,73 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+
+    <!-- SEO: Inline SVG favicons (no extra requests) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230a0a0a'/><text x='16' y='22' font-family='monospace' font-size='18' font-weight='700' fill='%2300ff88' text-anchor='middle'>rb</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='30' fill='%230a0a0a'/><text x='90' y='120' font-family='monospace' font-size='100' font-weight='700' fill='%2300ff88' text-anchor='middle'>rb</text></svg>">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ryan Bartell",
+      "jobTitle": "Partner and Operator",
+      "url": "https://btizzy.github.io/ryanbartell-site/",
+      "sameAs": [
+        "https://github.com/BTizzy",
+        "https://linkedin.com/in/ryan-bartell",
+        "https://trilliumhiring.com",
+        "https://trillycorp.com"
+      ],
+      "worksFor": [
+        {"@type": "Organization", "name": "Trillium Hiring", "url": "https://trilliumhiring.com", "founder": {"@type": "Person", "name": "Amy Renhard"}},
+        {"@type": "Organization", "name": "Trilly Corp", "url": "https://trillycorp.com", "founder": {"@type": "Person", "name": "Amy Renhard"}}
+      ],
+      "knowsAbout": ["Talent acquisition", "HR systems", "AI automation", "Recruiting operations", "Bug bounty hunting"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Ryan Bartell",
+      "url": "https://btizzy.github.io/ryanbartell-site/",
+      "description": "Partner and operator at Trillium Hiring and Trilly Corp. AI-powered talent partner for Seattle small businesses."
+    }
+    </script>
+
+    <!-- JSON-LD: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://btizzy.github.io/ryanbartell-site/"
+      }]
+    }
+    </script>
+
+    <!-- JSON-LD: ProfilePage (in addition to existing Person) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Ryan Bartell",
+        "jobTitle": "Partner and Operator",
+        "url": "https://btizzy.github.io/ryanbartell-site/",
+        "worksFor": [
+          {"@type": "Organization", "name": "Trillium Hiring", "url": "https://trilliumhiring.com"},
+          {"@type": "Organization", "name": "Trilly Corp", "url": "https://trillycorp.com"}
+        ]
+      }
+    }
+    </script>
 </head>
 <body>
     <!-- Noise texture overlay -->
