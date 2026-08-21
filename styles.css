@@ -318,11 +318,12 @@ a {
 
 .hero-subtitle {
     font-size: 1.25rem;
-    color: var(--text-secondary);
+    color: var(--text-primary);
     max-width: 620px;
-    margin-bottom: 40px;
+    margin-bottom: 32px;
     line-height: 1.6;
     font-weight: 400;
+    opacity: 0.88;
 }
 
 .inline-link {
@@ -340,7 +341,50 @@ a {
 .hero-cta {
     display: flex;
     gap: 16px;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
+}
+
+
+/* ==========================================
+   TERMINAL WIDGET
+   ========================================== */
+.vx-terminal {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 0 0 36px;
+    padding: 14px 16px;
+    max-width: 480px;
+    background: rgba(10, 10, 10, 0.9);
+    border: 1px solid var(--border-light);
+    border-left: 2px solid var(--accent);
+    border-radius: 6px;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.vx-terminal-line {
+    opacity: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.vx-terminal-line-1 { color: var(--text-secondary); }
+.vx-terminal-line-2 { color: var(--accent); }
+.vx-terminal-line-3,
+.vx-terminal-line-4 { color: var(--text-secondary); }
+.vx-terminal-line-5 { color: var(--text-muted); }
+
+@media (max-width: 640px) {
+    .vx-terminal {
+        font-size: 0.7rem;
+        max-width: 100%;
+    }
 }
 
 /* Buttons */
@@ -416,17 +460,18 @@ a {
 .hero-content > * {
     opacity: 1;
     transform: translateY(0);
-    animation: heroEntrance 0.7s var(--ease) both;
+    animation: heroEntrance 0.55s var(--ease) both;
 }
 
-.hero-status { animation-delay: 0.1s; }
-.hero-title { animation-delay: 0.25s; }
-.hero-subtitle { animation-delay: 0.45s; }
-.hero-cta { animation-delay: 0.6s; }
-.hero-metrics { animation-delay: 0.75s; }
+.hero-status { animation-delay: 0.05s; }
+.hero-title { animation-delay: 0.1s; }
+.hero-subtitle { animation-delay: 0.15s; }
+.hero-cta { animation-delay: 0.2s; }
+.vx-terminal { animation-delay: 0.25s; }
+.hero-metrics { animation-delay: 0.3s; }
 
 @keyframes heroEntrance {
-    from { opacity: 0; transform: translateY(16px); }
+    from { opacity: 0.01; transform: translateY(10px); }
     to   { opacity: 1; transform: translateY(0); }
 }
 
