@@ -1362,14 +1362,16 @@ a {
 /* Work card icons — clean, no corner dots (removed per Ryan 2026-08-21) */
 .vx-icon-talent,
 .vx-icon-systems,
-.vx-icon-ai {
+.vx-icon-ai,
+.vx-icon-wordpress {
     position: relative;
     overflow: hidden;
 }
 
 .vx-icon-talent::before,
 .vx-icon-systems::before,
-.vx-icon-ai::before {
+.vx-icon-ai::before,
+.vx-icon-wordpress::before {
     content: '';
     position: absolute;
     inset: -50%;
@@ -1381,7 +1383,8 @@ a {
 
 .work-card:hover .vx-icon-talent::before,
 .work-card:hover .vx-icon-systems::before,
-.work-card:hover .vx-icon-ai::before {
+.work-card:hover .vx-icon-ai::before,
+.work-card:hover .vx-icon-wordpress::before {
     transform: translateX(100%);
 }
 
