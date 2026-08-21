@@ -257,7 +257,7 @@ a {
     flex-direction: column;
     justify-content: center;
     position: relative;
-    padding: 120px 0 100px;
+    padding: 120px 0 280px;
     overflow: hidden;
 }
 
@@ -277,7 +277,7 @@ a {
 
 .hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     max-width: 800px;
 }
 
@@ -462,14 +462,15 @@ a {
 
 .scroll-hint {
     position: absolute;
-    bottom: 40px;
+    bottom: 28px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 8px;
-    opacity: 0.4;
+    opacity: 0.35;
+    z-index: 3;
 }
 
 .mouse {
@@ -1534,19 +1535,21 @@ a {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 480px;
+    height: 260px;
     pointer-events: none;
     z-index: 0;
-    opacity: 1;
-    mask-image: radial-gradient(
-        ellipse 120% 100% at 50% 100%,
-        black 25%,
-        transparent 80%
+    opacity: 0.9;
+    mask-image: linear-gradient(
+        to top,
+        black 0%,
+        black 35%,
+        transparent 100%
     );
-    -webkit-mask-image: radial-gradient(
-        ellipse 120% 100% at 50% 100%,
-        black 25%,
-        transparent 80%
+    -webkit-mask-image: linear-gradient(
+        to top,
+        black 0%,
+        black 35%,
+        transparent 100%
     );
     overflow: hidden;
 }
@@ -1556,15 +1559,18 @@ a {
     height: 100%;
     display: block;
     object-fit: cover;
-    object-position: center 40%;
+    object-position: center 55%;
     animation: kenBurns 60s ease-in-out infinite alternate;
-    filter: brightness(0.75) contrast(1.1) saturate(0.95);
+    filter: brightness(0.55) contrast(1.15) saturate(0.9);
 }
 
 @media (max-width: 768px) {
     .hero-skyline {
-        height: 220px;
-        opacity: 0.65;
+        height: 160px;
+        opacity: 0.7;
+    }
+    .hero {
+        padding-bottom: 180px;
     }
 }
 
