@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Providence Rhode Island skyline at dusk">
+  <defs>
+    <linearGradient id="providenceSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a0e14"/>
+      <stop offset="100%" stop-color="#161a20"/>
+    </linearGradient>
+    <linearGradient id="providenceWater" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0c1014"/>
+      <stop offset="100%" stop-color="#0a0d12"/>
+    </linearGradient>
+    <linearGradient id="supermanGlow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a0d12"/>
+      <stop offset="85%" stop-color="#0a0d12"/>
+      <stop offset="100%" stop-color="#00ff88" stop-opacity="0.35"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1200" height="210" fill="url(#providenceSky)"/>
+
+  <!-- Stars -->
+  <g fill="#ffffff">
+    <circle cx="120" cy="42" r="0.9" opacity="0.55"/>
+    <circle cx="280" cy="22" r="0.7" opacity="0.4"/>
+    <circle cx="380" cy="55" r="0.5" opacity="0.35"/>
+    <circle cx="500" cy="35" r="0.8" opacity="0.5"/>
+    <circle cx="610" cy="18" r="0.6" opacity="0.5"/>
+    <circle cx="700" cy="50" r="0.7" opacity="0.4"/>
+    <circle cx="820" cy="28" r="0.5" opacity="0.3"/>
+    <circle cx="940" cy="40" r="0.8" opacity="0.55"/>
+    <circle cx="1080" cy="25" r="0.6" opacity="0.45"/>
+    <circle cx="1140" cy="55" r="0.7" opacity="0.4"/>
+  </g>
+
+  <!-- Building silhouettes -->
+  <g fill="#0a0d12">
+    <!-- Left cluster (low rises + mid rises) -->
+    <rect x="0" y="180" width="80" height="40"/>
+    <rect x="80" y="168" width="55" height="52"/>
+    <rect x="135" y="188" width="40" height="32"/>
+    <rect x="175" y="172" width="80" height="48"/>
+    <rect x="255" y="155" width="55" height="65"/>
+    <rect x="310" y="170" width="40" height="50"/>
+    <rect x="350" y="140" width="60" height="80"/>
+    <rect x="410" y="158" width="50" height="62"/>
+    <rect x="460" y="148" width="50" height="72"/>
+    <!-- One Financial Plaza (mid-rise, stepped) -->
+    <rect x="510" y="120" width="65" height="100"/>
+    <rect x="520" y="100" width="45" height="20"/>
+
+    <!-- ============ CENTER: SUPERMAN BUILDING (Industrial Trust) ============ -->
+    <!-- Main tower body -->
+    <rect x="600" y="40" width="60" height="180" fill="url(#supermanGlow)"/>
+    <!-- Pyramid roof (Art Deco crown) -->
+    <polygon points="598,40 630,8 662,40"/>
+    <!-- Vertical neon strip on the pyramid -->
+    <line x1="630" y1="8" x2="630" y2="40" stroke="#00ff88" stroke-width="1" opacity="0.55"/>
+    <!-- Vertical neon strips down the tower (3 columns) -->
+    <line x1="610" y1="40" x2="610" y2="220" stroke="#00ff88" stroke-width="0.8" opacity="0.4"/>
+    <line x1="630" y1="40" x2="630" y2="220" stroke="#00ff88" stroke-width="0.8" opacity="0.4"/>
+    <line x1="650" y1="40" x2="650" y2="220" stroke="#00ff88" stroke-width="0.8" opacity="0.4"/>
+    <!-- Step-back terraces (Art Deco setbacks) -->
+    <rect x="606" y="100" width="48" height="6"/>
+    <rect x="612" y="150" width="36" height="6"/>
+
+    <!-- Right of Superman: 50 Kennedy Plaza -->
+    <rect x="678" y="155" width="55" height="65"/>
+    <rect x="678" y="148" width="55" height="7"/>
+    <rect x="733" y="160" width="45" height="60"/>
+
+    <!-- The Biltmore (recognizable top) -->
+    <rect x="778" y="130" width="80" height="90"/>
+    <rect x="778" y="120" width="80" height="10"/>
+    <polygon points="778,120 818,108 858,120"/>
+
+    <!-- Mid-rise cluster -->
+    <rect x="858" y="148" width="50" height="72"/>
+    <rect x="908" y="160" width="50" height="60"/>
+
+    <!-- Rhode Island State House (dome) -->
+    <g>
+      <rect x="958" y="135" width="100" height="85"/>
+      <rect x="958" y="128" width="100" height="7"/>
+      <ellipse cx="1008" cy="128" rx="50" ry="14"/>
+      <ellipse cx="1008" cy="114" rx="36" ry="10"/>
+      <rect x="1004" y="100" width="8" height="14"/>
+      <polygon points="1008,90 1016,100 1000,100"/>
+    </g>
+
+    <!-- Right edge -->
+    <rect x="1058" y="172" width="50" height="48"/>
+    <rect x="1108" y="155" width="50" height="65"/>
+    <rect x="1158" y="180" width="42" height="40"/>
+  </g>
+
+  <!-- Lit windows (subtle accent in Superman Building) -->
+  <g fill="#00ff88" opacity="0.5">
+    <rect x="615" y="70" width="2.5" height="3"/>
+    <rect x="635" y="85" width="2.5" height="3"/>
+    <rect x="620" y="105" width="2.5" height="3"/>
+    <rect x="640" y="125" width="2.5" height="3"/>
+    <rect x="615" y="145" width="2.5" height="3"/>
+    <rect x="635" y="165" width="2.5" height="3"/>
+    <rect x="620" y="185" width="2.5" height="3"/>
+    <rect x="640" y="205" width="2.5" height="3"/>
+  </g>
+
+  <!-- ============ WATER (Providence River) ============ -->
+  <rect y="210" width="1200" height="90" fill="url(#providenceWater)"/>
+
+  <!-- Water shimmer lines -->
+  <g stroke="#1a2a3a" stroke-width="0.6" opacity="0.55" fill="none">
+    <line x1="100" y1="232" x2="200" y2="232"/>
+    <line x1="350" y1="245" x2="500" y2="245"/>
+    <line x1="350" y1="262" x2="500" y2="262"/>
+    <line x1="600" y1="235" x2="700" y2="235"/>
+    <line x1="615" y1="258" x2="645" y2="258"/>
+    <line x1="850" y1="240" x2="950" y2="240"/>
+    <line x1="850" y1="262" x2="950" y2="262"/>
+    <line x1="1000" y1="250" x2="1100" y2="250"/>
+    <line x1="1000" y1="270" x2="1100" y2="270"/>
+    <line x1="250" y1="280" x2="350" y2="280"/>
+    <line x1="650" y1="285" x2="750" y2="285"/>
+    <line x1="1050" y1="285" x2="1150" y2="285"/>
+  </g>
+
+  <!-- Reflection of Superman Building neon strip (subtle vertical streak in water) -->
+  <rect x="608" y="220" width="44" height="40" fill="#00ff88" opacity="0.04"/>
+
+  <!-- Soft glow under Superman Building on water -->
+  <ellipse cx="630" cy="232" rx="60" ry="4" fill="#00ff88" opacity="0.12"/>
+</svg>

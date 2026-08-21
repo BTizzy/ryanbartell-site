@@ -232,3 +232,49 @@ console.log('%chttps://github.com/BTizzy', 'color: #555; font-size: 10px;');
         bg.style.animationPlayState = 'running';
     });
 })();
+
+// --- 6. Scroll progress bar (thin green line at top of viewport) ---
+(function vxInitScrollProgress() {
+    const bar = document.getElementById('scrollProgress');
+    if (!bar) return;
+
+    let raf = null;
+    const update = () => {
+        const doc = document.documentElement;
+        const scrollTop = window.pageYOffset || doc.scrollTop;
+        const scrollHeight = doc.scrollHeight - window.innerHeight;
+        const pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+        bar.style.width = `${Math.min(100, Math.max(0, pct))}%`;
+    };
+
+    window.addEventListener('scroll', () => {
+        if (raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(update);
+    }, { passive: true });
+
+    window.addEventListener('resize', update, { passive: true });
+    update();
+})();
+
+// --- 7. Back to top button (appears after 600px scroll, smooth scroll to top) ---
+(function vxInitBackToTop() {
+    const btn = document.getElementById('backToTop');
+    if (!btn) return;
+
+    const SHOW_AFTER = 600;
+    let lastVisible = false;
+
+    const update = () => {
+        const shouldShow = window.pageYOffset > SHOW_AFTER;
+        if (shouldShow !== lastVisible) {
+            btn.classList.toggle('visible', shouldShow);
+            lastVisible = shouldShow;
+        }
+    };
+
+    window.addEventListener('scroll', update, { passive: true });
+    btn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    update();
+})();

@@ -89,6 +89,16 @@
     </script>
 </head>
 <body>
+    <!-- Scroll progress bar -->
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <!-- Back to top button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top" type="button">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 19V5"/>
+            <path d="M5 12l7-7 7 7"/>
+        </svg>
+    </button>
     <!-- Noise texture overlay -->
     <div class="noise-overlay" aria-hidden="true"></div>
 
@@ -122,8 +132,7 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-status">
-                    <span class="status-dot"></span>
-                    <span>WordPress developer · Seattle / remote</span>
+                    <span>WordPress developer · Providence RI / remote</span>
                 </div>
                 <h1 class="hero-title">
                     <span class="title-line">I build WordPress</span>
@@ -131,7 +140,7 @@
                     <span class="title-line dim">and dev would together.</span>
                 </h1>
                 <p class="hero-subtitle">
-                    Senior WordPress developer — custom PHP themes, performance work, and AI integration. I work with founder-led teams (5 to 25 people) in Seattle and remote.
+                    Senior WordPress developer — custom PHP themes, performance work, and AI integration. I work with founder-led teams (5 to 25 people) in Providence and remote.
                 </p>
                 <div class="hero-cta">
                     <a href="https://calendly.com/ryanbartell-trilliumhiring/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book a Call →</a>
@@ -153,6 +162,9 @@
                 </div>
             </div>
         </div>
+        <div class="hero-skyline" aria-hidden="true">
+            <img src="assets/providence-skyline.svg" alt="" class="hero-skyline-img">
+        </div>
         <div class="scroll-hint">
             <div class="mouse">
                 <div class="wheel"></div>
@@ -170,7 +182,7 @@
             </div>
             <div class="about-grid">
                 <div class="about-bio">
-                    <p>Senior WordPress developer — custom PHP themes from scratch, performance work, and AI integration. I work with founder-led teams in Seattle and remote: 5 to 25 people, can't justify a full in-house dev team, need a site that looks like a designer and a senior dev built it together.</p>
+                    <p>Senior WordPress developer — custom PHP themes from scratch, performance work, and AI integration. I work with founder-led teams in Providence and remote: 5 to 25 people, can't justify a full in-house dev team, need a site that looks like a designer and a senior dev built it together.</p>
                     <p>Custom themes, no page builders. I've built the Trillium Hiring site on GeneratePress, the Trilly Corp site on a custom PHP theme, and shipped Franklin Court Assisted Living's full Wix-to-WordPress rebuild. Lighthouse 90+ across the board. Code that doesn't break when you change the copy.</p>
                     <p>AI integration across both WordPress and operations — agents that update content, scrapers that keep data fresh, workflows that handle the grunt work. Same brain that builds the systems breaks them: I've reported criticals on BentoML and Ollama through Huntr.</p>
                 </div>
@@ -185,7 +197,7 @@
                         <ul>
                             <li>
                                 <span class="about-fact-label">Base</span>
-                                <span class="about-fact-value">Providence RI · works Seattle</span>
+                                <span class="about-fact-value">Providence RI · Pacific NW clients</span>
                             </li>
                             <li>
                                 <span class="about-fact-label">Roles</span>
@@ -343,7 +355,7 @@
                     <div class="company-logo">TH</div>
                     <div class="company-info">
                         <h3>Trillium Hiring</h3>
-                        <p>GeneratePress + custom CSS. AEO-structured, conversion-focused. Talent partner for 5–25 seat founder-led Seattle firms.</p>
+                        <p>GeneratePress + custom CSS. AEO-structured, conversion-focused. Talent partner for 5–25 seat founder-led PNW firms.</p>
                     </div>
                     <span class="company-arrow">→</span>
                 </a>
