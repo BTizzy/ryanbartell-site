@@ -431,8 +431,21 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .hero-content > * {
-        animation: none;
+    .hero-content > *,
+    .scroll-hint .wheel,
+    .back-to-top,
+    .company-card,
+    .nav-link,
+    .metric,
+    .metric-value,
+    .vx-terminal-line,
+    .build-sparkline {
+        animation: none !important;
+        transition-duration: 0.01ms !important;
+        transform: none !important;
+    }
+    .nav-link::after {
+        transition: none;
     }
 }
 
@@ -1252,6 +1265,10 @@ a {
     }
 }
 
+@media (max-width: 768px) {
+    .scroll-hint { display: none; }
+}
+
 @media (max-width: 640px) {
     :root {
         --section-padding: 80px;
@@ -1479,6 +1496,10 @@ a {
 }
 
 /* --- 8. Mobile: tighten things up so visual layer doesn't feel busy --- */
+@media (max-width: 768px) {
+    .scroll-hint { display: none; }
+}
+
 @media (max-width: 640px) {
     .vx-hero-bg {
         -webkit-mask-image: radial-gradient(ellipse 100% 80% at 50% 35%, black 25%, transparent 80%);
@@ -1498,12 +1519,21 @@ a {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 240px;
+    height: 480px;
     pointer-events: none;
     z-index: 0;
-    opacity: 0.85;
-    mask-image: linear-gradient(to top, black 65%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to top, black 65%, transparent 100%);
+    opacity: 1;
+    mask-image: radial-gradient(
+        ellipse 120% 100% at 50% 100%,
+        black 25%,
+        transparent 80%
+    );
+    -webkit-mask-image: radial-gradient(
+        ellipse 120% 100% at 50% 100%,
+        black 25%,
+        transparent 80%
+    );
+    overflow: hidden;
 }
 
 .hero-skyline-img {
@@ -1511,13 +1541,15 @@ a {
     height: 100%;
     display: block;
     object-fit: cover;
-    object-position: bottom center;
+    object-position: center 40%;
+    animation: kenBurns 60s ease-in-out infinite alternate;
+    filter: brightness(0.75) contrast(1.1) saturate(0.95);
 }
 
 @media (max-width: 768px) {
     .hero-skyline {
-        height: 140px;
-        opacity: 0.55;
+        height: 220px;
+        opacity: 0.65;
     }
 }
 
@@ -1581,6 +1613,10 @@ a {
     outline-offset: 3px;
 }
 
+@media (max-width: 768px) {
+    .scroll-hint { display: none; }
+}
+
 @media (max-width: 640px) {
     .back-to-top {
         bottom: 18px;
@@ -1588,4 +1624,26 @@ a {
         width: 40px;
         height: 40px;
     }
+}
+
+
+@keyframes kenBurns {
+    0%   { transform: scale(1) translate(0, 0); }
+    100% { transform: scale(1.06) translate(-1.5%, -1%); }
+}
+
+
+/* ==========================================
+   HERO SKYLINE CREDIT (CC BY-SA 4.0 attribution)
+   ========================================== */
+.hero-skyline-credit {
+    position: absolute;
+    bottom: 6px;
+    right: 14px;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: rgba(255, 255, 255, 0.35);
+    letter-spacing: 0.04em;
+    z-index: 2;
+    pointer-events: none;
 }
