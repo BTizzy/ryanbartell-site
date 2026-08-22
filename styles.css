@@ -1048,6 +1048,136 @@ a {
 }
 
 /* ==========================================
+   ENGAGEMENT / PRICING
+   ========================================== */
+
+.engagement-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.engagement-card {
+    position: relative;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 32px 28px;
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.engagement-card:hover {
+    border-color: var(--border-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.engagement-card-retainer {
+    border-color: rgba(0, 255, 136, 0.25);
+    background:
+        radial-gradient(circle at top right, rgba(0, 255, 136, 0.06) 0%, transparent 60%),
+        var(--bg-card);
+}
+
+.engagement-card-tag {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--accent);
+    padding: 4px 10px;
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.engagement-card-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+}
+
+.engagement-card-desc {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.engagement-card-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+}
+
+.engagement-card-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.engagement-list-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.engagement-list-value {
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.engagement-foot {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    padding: 22px 24px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.engagement-foot .inline-link {
+    color: var(--accent);
+    border-bottom: 1px solid transparent;
+}
+
+.engagement-foot .inline-link:hover {
+    border-bottom-color: var(--accent);
+}
+
+@media (max-width: 768px) {
+    .engagement-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .engagement-card {
+        padding: 24px 20px;
+    }
+
+    .engagement-card-title {
+        font-size: 1.2rem;
+    }
+}
+
+/* ==========================================
    CONNECT
    ========================================== */
 
