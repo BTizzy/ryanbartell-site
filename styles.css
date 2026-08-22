@@ -631,8 +631,8 @@ a {
     height: 100%;
     display: block;
     object-fit: cover;
-    /* Portrait headshot — face sits in the upper third */
-    object-position: center 22%;
+    /* Source is already pre-cropped — face is centered */
+    object-position: center;
 }
 
 .about-facts-title {
