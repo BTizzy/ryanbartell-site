@@ -620,18 +620,19 @@ a {
     aspect-ratio: 1;
     max-width: 220px;
     margin: 0 auto;
-    background: var(--accent);
+    background: var(--bg-secondary);
     border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 12px 36px rgba(0, 255, 136, 0.18), 0 0 0 1px rgba(0, 255, 136, 0.25);
+    overflow: hidden;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.06);
 }
 
-.about-monogram svg {
-    width: 60%;
-    height: 60%;
+.about-monogram img {
+    width: 100%;
+    height: 100%;
     display: block;
+    object-fit: cover;
+    /* Portrait headshot — face sits in the upper third */
+    object-position: center 22%;
 }
 
 .about-facts-title {
