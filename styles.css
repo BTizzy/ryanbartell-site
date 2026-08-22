@@ -135,8 +135,8 @@ a {
     /* Solid bg (no backdrop-filter) — backdrop-filter creates a containing
        block for position:fixed descendants, which was clipping the mobile
        drawer to the nav bar's ~84px height. */
-    background: rgba(10, 10, 10, 0.92);
-    border-bottom: 1px solid transparent;
+    background: rgba(10, 10, 10, 0.96);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
     transition: var(--transition);
 }
 
@@ -162,6 +162,10 @@ a {
     color: var(--text-primary);
     letter-spacing: -0.02em;
     transition: transform 0.2s var(--ease);
+    /* Sit above the mobile drawer so the brand mark stays visible
+       even when the menu is full-screen open */
+    position: relative;
+    z-index: 1001;
 }
 
 .nav-logo:hover {
@@ -239,6 +243,9 @@ a {
     padding: 10px;
     min-width: 44px;
     min-height: 44px;
+    /* Sit above the mobile drawer */
+    position: relative;
+    z-index: 1001;
 }
 
 .nav-mobile-toggle span {
